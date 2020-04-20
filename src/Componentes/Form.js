@@ -28,8 +28,6 @@ class FormRegistro extends React.Component {
 
     componentDidMount(){
         this.getDatos();
-        console.log(this.state.usuarios);
-        
     }
 
     getDatos(){
@@ -151,6 +149,7 @@ class FormRegistro extends React.Component {
     render() {
         return (
             <div>
+                {console.log(this.state.usuarios)}
                 <div>
                     <div className="col s12 m6">
                         <div className="card">
