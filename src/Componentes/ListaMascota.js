@@ -5,6 +5,7 @@ class ListaMascota extends React.Component {
 
 
     render() {
+        //llammos al construcutor que va recibir las props que pasemos.
         const { funcionEliminar, funcionModificar } = this.props
         return (
             <div className="card">
@@ -16,10 +17,15 @@ class ListaMascota extends React.Component {
                         <th className="center">Acciones</th>
                     </tr>
                     {
+                        //verificamos que el arreglo de mascotas no sea nulo
                         this.props.mascota !== null ?
+
+                        //recorremos el arreglo de mascotas
                             this.props.mascota.map((mascota) => {
                                 return (
                                     <tr>
+
+                                        {/*asignamos a cada td un atributo del arreglo*/}
                                         <td>{mascota.nombre}</td>
                                         <td>{mascota.edad}</td>
                                         <td>{mascota.tipo}</td>

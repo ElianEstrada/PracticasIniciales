@@ -9,6 +9,7 @@ const App = () =>{
     return (
         <BrowserRouter>
             <Switch>
+                {/*Creamos las rutas a las que podremos acceder*/}
                 <Route exact path="/" component={home}/>
                 <Route exact path="/Mascotas" component ={Mascotas}/>
             </Switch>

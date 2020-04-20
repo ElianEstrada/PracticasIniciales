@@ -7,6 +7,8 @@ export class home extends React.Component {
         return (
             <div className="container">
                 <h1> Bienvenido </h1>
+
+                {/*llamamos al componente y le pasamos las Props correspondientes*/}
                 <FormRegistro
                     objeto="Usuario"
                 />
