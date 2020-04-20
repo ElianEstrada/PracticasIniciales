@@ -27,7 +27,9 @@ class FormRegistro extends React.Component {
 
 
     componentDidMount(){
-        this.getDatos()
+        this.getDatos();
+        console.log(this.state.usuarios);
+        
     }
 
     getDatos(){
@@ -89,8 +91,17 @@ class FormRegistro extends React.Component {
                 }
             } else if (this.props.objeto === "Usuario") {
                 
-                localStorage.setItem("usuario", JSON.stringify({ nombre: usuario.name }))
-                window.location = "http://localhost:3000/Mascotas"
+                const usuarioActual = this.state.usuarios.filter(item => item.name == this.state.usuario.nombre)
+                
+                if(usuarioActual.length != 0){
+                    localStorage.setItem("usuario", JSON.stringify({ nombre: this.state.usuario.nombre }))
+                    alert("Bienvenido")
+                    window.location = "http://localhost:3000/Mascotas"
+                }else{
+                    alert("El usuario no existe")
+                }
+
+                
             }
         } else {
 
@@ -110,7 +121,6 @@ class FormRegistro extends React.Component {
                 }
             })
             alert("Mascota Modificada")
-            
         }
 
     }
@@ -142,15 +152,12 @@ class FormRegistro extends React.Component {
         return (
             <div>
                 <div>
-                    {console.log(this.state.usuarios)
-                    }
                     <div className="col s12 m6">
                         <div className="card">
                             <div className="card-content black-text">
                                 <span className="card-title"> Registrar {this.props.objeto} </span>
                                 <form onSubmit={this.setDatos}>
                                     Nombre:
-                                    
                                     {
                                         this.props.objeto === 'Mascota' ?
                                             <Fragment>
