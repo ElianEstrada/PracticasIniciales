@@ -88,10 +88,6 @@ class FormRegistro extends React.Component {
                     alert("Debe Seleccionar el tipo de la mascota")
                 }
             } else if (this.props.objeto === "Usuario") {
-                console.log(this.state.usuarios);
-                
-                const usuario = this.state.usuarios.filter(item => item.name == this.state.usuarios.nombre)
-                console.log(usuario);
                 
                 localStorage.setItem("usuario", JSON.stringify({ nombre: usuario.name }))
                 window.location = "http://localhost:3000/Mascotas"
