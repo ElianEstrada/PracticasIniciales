@@ -9,5 +9,4 @@ let contenedor = document.getElementById('root')
 //Enviamos el componente que renderizara, y a donde lo renderizara.
 ReactDOM.render(<App />, contenedor);
 
-//Fin del documento
 
