@@ -24,7 +24,6 @@ class ListaMascota extends React.Component {
                             this.props.mascota.map((mascota) => {
                                 return (
                                     <tr>
-
                                         {/*asignamos a cada td un atributo del arreglo*/}
                                         <td>{mascota.nombre}</td>
                                         <td>{mascota.edad}</td>
